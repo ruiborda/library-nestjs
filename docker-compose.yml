@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mongo:
     image: mongo
@@ -14,9 +12,19 @@ services:
     working_dir: /usr/src/app
     volumes:
       - ./:/usr/src/app
+      - ./node_modules:/usr/src/app/node_modules
     ports:
       - "3000:3000"
     environment:
       NODE_ENV: development
     command: npm run start
+    depends_on:
+      - mongo
+      - bun
+  bun:
+    image: oven/bun
+    working_dir: /usr/src/app
+    volumes:
+        - ./:/usr/src/app
+        - ./node_modules:/usr/src/app/node_modules
 

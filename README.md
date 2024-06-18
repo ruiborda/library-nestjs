@@ -2,6 +2,7 @@
 
 ## Deploy
 ```bash
+$ docker compose run bun bun install
 $ docker-compose up -d
 ```
 
