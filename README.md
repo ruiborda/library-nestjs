@@ -3,7 +3,7 @@
 ## Deploy
 ```bash
 $ docker compose run bun bun install
-$ docker-compose up -d
+$ docker compose up -d
 ```
 
 ## GraphQL Playground
